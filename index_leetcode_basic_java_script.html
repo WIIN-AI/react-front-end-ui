@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+   <body>
+      <div style="background-color: lightblue;">
+         HELLO WORLD
+      </div>
+      <input type="text" placeholder="email"></input>
+      <input type="text" placeholder="password"></input>
+      <button onclick="fn()">Sign In</button><br/>
+      <button onclick="renderproblem_1()">1</button>
+      <button onclick="renderproblem_2()">2</button>
+      <div id="problem-statments" style="width: 70vw;">
+      </div>
+      <script>
+         const problems =[{
+               title:"001 BitWise And of Number Ranger",
+               difficulty:"Medium",
+               acceptance: "42%"
+            },{
+               title:"002 BitWise And of Number Ranger",
+               difficulty:"Hard",
+               acceptance: "10%"
+            },{
+               title:"003 BitWise And of Number Ranger",
+               difficulty:"Easy",
+               acceptance: "99%"
+            },
+         ];
+         const problems1 =[{
+               title:"101 BitWise And of Number Ranger",
+               difficulty:"Medium",
+               acceptance: "100%"
+            },{
+               title:"102 BitWise And of Number Ranger",
+               difficulty:"Hard",
+               acceptance: "100%"
+            },{
+               title:"103 BitWise And of Number Ranger",
+               difficulty:"Easy",
+               acceptance: "100%"
+            },
+         ];
+         const problems2 =[{
+               title:"201 BitWise And of Number Ranger",
+               difficulty:"Medium",
+               acceptance: "200%"
+            },{
+               title:"202 BitWise And of Number Ranger",
+               difficulty:"Hard",
+               acceptance: "200%"
+            },{
+               title:"203 BitWise And of Number Ranger",
+               difficulty:"Easy",
+               acceptance: "200%"
+            },
+         ];
+         function renderProblems(problemInputArray){
+            const parentEl=document.getElementById("problem-statments");
+            const tableTag =document.createElement("table");
+   
+            for (let i=0; i<problemInputArray.length; i++){
+               const trTag = document.createElement("tr");
+               const tdEl=document.createElement("td");
+               tdEl.innerHTML = problemInputArray[i].title;
+               const tdE2=document.createElement("td");
+               tdE2.innerHTML = problemInputArray[i].difficulty;
+               const tdE3=document.createElement("td");
+               tdE3.innerHTML = problemInputArray[i].acceptance;
+   
+               trTag.appendChild(tdEl);
+               trTag.appendChild(tdE2);
+               trTag.appendChild(tdE3);
+               tableTag.appendChild(trTag);
+            }
+            parentEl.appendChild(tableTag);
+         }
+         // renderProblems(problems); // First Render 
+
+         function renderproblem_1(){ // this is button based render and clear 
+            const parentEl=document.getElementById("problem-statments");
+            parentEl.innerHTML =""
+            renderProblems(problems1);
+         }
+         function renderproblem_2(){ // this is button based render and clear 
+            const parentEl=document.getElementById("problem-statments");
+            parentEl.innerHTML =""
+            renderProblems(problems2);
+         }
+      </script> 
+   </body>
+</html>
